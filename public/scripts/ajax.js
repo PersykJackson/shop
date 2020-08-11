@@ -17,8 +17,9 @@ function unc() {
     });
     reload();
 }
-function reload(){
-    $(".hide").load('main/index .hide');
+function reload(target){
+    target = typeof target !== 'undefined' ?  target : '.hide';
+    $(target).load('main/index '+target);
 }
 function deleteThis(obj){
     let id = obj.value;
@@ -29,4 +30,14 @@ function deleteThis(obj){
         dataType: "html"
     });
     reload();
+}
+function onCategory(obj){
+    let id = obj.value;
+    $.ajax({
+        url: 'main/ajax',
+        type: 'POST',
+        data: ({action: 'onCategory', target: id}),
+        dataType: "html",
+        success: reload('.contain')
+    });
 }

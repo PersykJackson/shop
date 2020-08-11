@@ -46,13 +46,9 @@
     <div class="content">
 <div class="categories"><h3>Категории</h3>
     <list>
-        <li>Товары для дома</li>
-        <li>Одежда</li>
-        <li>Аксессуары</li>
-        <li>Спиртное</li>
-        <li>Животные</li>
-        <li>Техника</li>
-
+        <?php foreach($vars[2]['category'] as $key => $value){
+            echo  "<li><button value='{$value['id']}' onclick='onCategory(this)'>{$value['name']}</button></li>";
+        }?>
     </list></div>
     <div class="products">
         <div class="title"><h3>Товары</h3></div>

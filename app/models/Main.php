@@ -7,12 +7,13 @@ use app\lib\Db;
 
 class Main
 {
-    public $products = [];
     public $db;
     public function __construct()
     {
         $this->db = new Db;
-        $this->products = $this->db->select('select name, src, id, cost, category from products');
+    }
+    public function getProducts(){
+        return $this->db->select('select id, name, cost, category, src from products');
     }
     public function add($id){
         /*Функция добавляет в сессию массив(продукты) с массивом(количество), и добавляет к уже имеющемуся количество товаров еще 1*/
@@ -41,7 +42,9 @@ class Main
     }
     public function deleteThis($id){
         unset($_SESSION['products']['count'][$id]);
-        var_dump($_SESSION['products']['count']);
+    }
+    public function getCategory(){
+        return $this->db->select('select * from category');
     }
 
 }

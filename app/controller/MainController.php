@@ -6,11 +6,16 @@ use app\core\Controller;
 
 class MainController extends Controller
 {
+    protected $vars = [];
+    protected $products = [];
     public function indexAction(){
-        $vars = [];
-        $vars [] = ['prod' => $this->model->products];
-        $vars [] = ['basket' => $this->model->getBasket()];
-        $this->view->render(array('title' => 'Главная', 'style' => '/public/style/index.css'), $vars);
+//        if($_POST['action'] == 'onCategory'){
+//            $this->products = ['prod' => $this->model->getProducts('select * into products where id = ?')];
+//        };
+        $this->vars [] = ['prod' => $this->model->getProducts()];
+        $this->vars [] = ['basket' => $this->model->getBasket()];
+        $this->vars [] = ['category' => $this->model->getCategory()];
+        $this->view->render(array('title' => 'Главная', 'style' => '/public/style/index.css'), $this->vars);
 
     }
     public function ajaxAction(){
