@@ -8,7 +8,7 @@ function add(obj){
     });
     reload();
 }
-function unc() {
+function basketClean() {
     $.ajax({
         url: 'main/ajax',
         type: 'POST',
@@ -44,4 +44,12 @@ function onCategory(obj){
         dataType: "html",
         success: rel()
     });
+}
+function toOrder() {
+    $.ajax({
+        url: 'main/ajax',
+        type: 'POST',
+        data: ({action: 'toOrder'}),
+        dataType: "html"
+    })
 }

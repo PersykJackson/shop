@@ -17,25 +17,31 @@
 
     </div>
     <div class="basket">
-        <button class="basketBtn" onclick="unc()">Корзина</button>
+        <button class="basketBtn" onclick="show()">Корзина</button>
         <div class="hide">
             <?php
-                    echo "<table>
+                    if (count($vars[1]['basket'])) {
+                        echo "<table>
                     <tr>
                     <td>Наименование</td><td>Категория</td><td>Цена</td><td>Количество</td></tr>";
-            foreach ($vars[1]['basket'] as $key => $value){
-                echo "<tr><td>{$value[0][name]}</td><td>{$value[0][category]}</td><td>{$value[0][cost]}</td><td>";
-                foreach ($_SESSION['products']['count'] as $k => $val){
-                    if($value[0][id] == $k){
-                        echo $val."</td><td><button value='{$value[0][id]}' onclick='deleteThis(this)'>Удалить</button></td></tr>";
+                        foreach ($vars[1]['basket'] as $key => $value) {
+                            echo "<tr><td>{$value[0][name]}</td><td>{$value[0][category]}</td><td>{$value[0][cost]}</td><td>";
+                            foreach ($_SESSION['products']['count'] as $k => $val) {
+                                if ($value[0][id] == $k) {
+                                    echo $val . "</td><td><button value='{$value[0][id]}' onclick='deleteThis(this)'>Удалить</button></td></tr>";
+                                }
+                            }
+
+                        }
+
+                        echo "</table>";
+                        echo "<a href='main/basket'>Оформить заказ</a><button onclick='basketClean()'>Очистить корзину</button>";
+                    }else{
+                        echo "<p>Здесь пока ничего нет!</p>";
                     }
-                }
 
-            }
-
-            echo "</table>";
             ?>
-            <button onclick="toOrder()">Оформить заказ</button><button onclick="basketClean()">Очистить корзину</button>
+
         </div>
     </div>
 

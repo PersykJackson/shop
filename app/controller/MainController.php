@@ -24,6 +24,8 @@ class MainController extends Controller
         }elseif ($_POST['action'] == 'onCategory'){
             $this->model->setCategory($_POST['target']);
             $this->categoryAction();
+        }elseif ($_POST['action'] == 'toOrder'){
+            header('Location: main/basket');
         }
     }
     public function categoryAction(){

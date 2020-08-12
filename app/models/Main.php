@@ -35,10 +35,12 @@ class Main
     }
     public function getBasket(){
         $result = [];
-        foreach($_SESSION['products']['count'] as $key => $value){
-            $result[] = $this->db->select('select name, src, id, cost, category from products where id = ?', array($key));
+        if (count($_SESSION['products']['count'])) {
+            foreach ($_SESSION['products']['count'] as $key => $value) {
+                $result[] = $this->db->select('select name, src, id, cost, category from products where id = ?', array($key));
+            }
+            return $result;
         }
-        return $result;
     }
     public function deleteThis($id){
         unset($_SESSION['products']['count'][$id]);
