@@ -21,6 +21,10 @@ function reload(target){
     target = typeof target !== 'undefined' ?  target : '.hide';
     $(target).load('main/index '+target);
 }
+function rel() {
+    let v = '.contain';
+    $('.contain').load('main/category '+v);
+}
 function deleteThis(obj){
     let id = obj.value;
     $.ajax({
@@ -38,6 +42,6 @@ function onCategory(obj){
         type: 'POST',
         data: ({action: 'onCategory', target: id}),
         dataType: "html",
-        success: reload('.contain')
+        success: rel()
     });
 }

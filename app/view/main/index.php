@@ -35,6 +35,7 @@
 
             echo "</table>";
             ?>
+            <button onclick="toOrder()">Оформить заказ</button><button onclick="basketClean()">Очистить корзину</button>
         </div>
     </div>
 

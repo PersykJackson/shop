@@ -12,8 +12,8 @@ class Main
     {
         $this->db = new Db;
     }
-    public function getProducts(){
-        return $this->db->select('select id, name, cost, category, src from products');
+    public function getProducts($val = ''){
+        return $this->db->select('select id, name, cost, category, src from products'.$val);
     }
     public function add($id){
         /*Функция добавляет в сессию массив(продукты) с массивом(количество), и добавляет к уже имеющемуся количество товаров еще 1*/
@@ -45,6 +45,9 @@ class Main
     }
     public function getCategory(){
         return $this->db->select('select * from category');
+    }
+    public function setCategory($id){
+        $_SESSION['Category'] = $id;
     }
 
 }
