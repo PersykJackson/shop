@@ -16,6 +16,10 @@ return [
         'controller' => 'main',
         'action' => 'category'
     ],
+    'main/basket' => [
+        'controller' => 'main',
+        'action' => 'basket'
+    ],
     'account/login' => [
         'controller' => 'account',
         'action' => 'login'

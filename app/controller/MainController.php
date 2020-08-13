@@ -32,4 +32,9 @@ class MainController extends Controller
         $this->vars [] = ['prod' => $this->model->getProducts(' where id =' . $_SESSION['Category'])];
         $this->view->render(array('title' => 'Главная', 'style' => '/public/style/index.css'), $this->vars);
     }
+    public function basketAction(){
+        $vars [] = ['basket' => $this->model->getBasket()];
+        $vars [] = ['path' => $this->route['controller'].'/'.$this->route['action']];
+        $this->view->render(array('title' => 'Корзина', 'style' => '/public/style/ind1ex.css'), $vars);
+    }
 }

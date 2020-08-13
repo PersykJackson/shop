@@ -53,3 +53,17 @@ function toOrder() {
         dataType: "html"
     })
 }
+function deleteThisBask(obj){
+    let id = obj.value;
+    $.ajax({
+        url: '/main/ajax',
+        type: 'POST',
+        data: ({action: 'deleteThis', target: id}),
+        dataType: "html"
+    });
+    reloadBask();
+}
+function reloadBask() {
+    let v = '.contain';
+    $('.contain').load('/main/basket '+v);
+}
