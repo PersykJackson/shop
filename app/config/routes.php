@@ -31,5 +31,17 @@ return [
     'account/register' => [
         'controller' => 'account',
         'action' => 'register'
-    ]
+    ],
+    'crm/index' => [
+        'controller' => 'crm',
+        'action' => 'index'
+    ],
+    'crm/order' => [
+        'controller' => 'crm',
+        'action' => 'order'
+    ],
+    'crm/ajax' => [
+    'controller' => 'crm',
+    'action' => 'ajax'
+]
 ];

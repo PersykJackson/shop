@@ -29,7 +29,11 @@ class MainController extends Controller
         }
     }
     public function categoryAction(){
-        $this->vars [] = ['prod' => $this->model->getProducts(' where id =' . $_SESSION['Category'])];
+        if($_SESSION['Category'] == 'all'){
+            $this->vars [] = ['prod' => $this->model->getProducts()];
+        }else {
+            $this->vars [] = ['prod' => $this->model->getProducts(' where id =' . $_SESSION['Category'])];
+        }
         $this->view->render(array('title' => 'Главная', 'style' => '/public/style/index.css'), $this->vars);
     }
     public function basketAction(){

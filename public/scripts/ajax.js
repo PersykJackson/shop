@@ -85,3 +85,6 @@ function buy(){
         dataType: 'html'
     })
 }
+function showAll(){
+
+}
