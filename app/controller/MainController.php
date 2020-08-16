@@ -24,8 +24,8 @@ class MainController extends Controller
         }elseif ($_POST['action'] == 'onCategory'){
             $this->model->setCategory($_POST['target']);
             $this->categoryAction();
-        }elseif ($_POST['action'] == 'toOrder'){
-            header('Location: main/basket');
+        }elseif ($_POST['action'] == 'setCount'){
+            $this->model->setCount($_POST);
         }
     }
     public function categoryAction(){
@@ -36,5 +36,18 @@ class MainController extends Controller
         $vars [] = ['basket' => $this->model->getBasket()];
         $vars [] = ['path' => $this->route['controller'].'/'.$this->route['action']];
         $this->view->render(array('title' => 'Корзина', 'style' => '/public/style/ind1ex.css'), $vars);
+    }
+    public function orderAction(){
+        if($_POST['firstName']){
+            if($this->model->buy($_POST)){
+                $this->view->redirect('/../');
+
+            };
+        }
+        $minmax = $this->model->date();
+        $vars [] = ['basket' => $this->model->getBasket()];
+        $vars ['min'] = $minmax[0];
+        $vars ['max'] = $minmax[1];
+        $this->view->render(array('title' => 'Оформление заказа', 'style' => '/public/style/ind1ex.css'), $vars);
     }
 }

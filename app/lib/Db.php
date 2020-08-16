@@ -22,5 +22,6 @@ class Db
     public function insert($sql, $vars = []){
         $query = $this->db->prepare($sql);
         $result = $query->execute($vars);
+        return $result;
     }
 }

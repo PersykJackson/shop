@@ -53,7 +53,8 @@
     <div class="content">
 <div class="categories"><h3>Категории</h3>
     <list>
-        <?php foreach($vars[2]['category'] as $key => $value){
+
+        <?php echo  "<li><button value='_' onclick='onCategory(this)'>Все</button></li>"; foreach($vars[2]['category'] as $key => $value){
             echo  "<li><button value='{$value['id']}' onclick='onCategory(this)'>{$value['name']}</button></li>";
         }?>
     </list></div>

@@ -67,3 +67,21 @@ function reloadBask() {
     let v = '.contain';
     $('.contain').load('/main/basket '+v);
 }
+function count(obj, id){
+let count = obj.value;
+$.ajax({
+    url: '/main/ajax',
+    type: 'POST',
+    data: ({action: 'setCount', id: id, count: count}),
+    dataType: 'html',
+    success: $('.total').load('/main/basket .total')
+})
+}
+function buy(){
+    $.ajax({
+        url: '/main/ajax',
+        type: 'POST',
+        data: ({action: 'buy'}),
+        dataType: 'html'
+    })
+}

@@ -20,6 +20,10 @@ return [
         'controller' => 'main',
         'action' => 'basket'
     ],
+    'main/order' => [
+        'controller' => 'main',
+        'action' => 'order'
+    ],
     'account/login' => [
         'controller' => 'account',
         'action' => 'login'
