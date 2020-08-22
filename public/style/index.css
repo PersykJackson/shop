@@ -5,7 +5,7 @@
     margin-right: auto;
     width: 85%;
     min-width: min-content;
-    background-color: rgba(255,255,255, 1);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     height: max-content;
 }
@@ -73,15 +73,15 @@ list li:hover{
 .basketBtn{
     justify-self: center;
     padding: 15px 30px;
-    background-color: rgba(230, 70, 70, 0.3);
+    background-color: rgba(0, 191, 255, 0.5);;
     border: none;
     border-radius: 5px;
 }
 .basketBtn:hover{
-    background-color: rgba(250, 130, 70, 0.3);
+    color: white;
 }
 .basketBtn:active{
-    color: red;
+    color: white;
     border: none;
 }
 .products{
@@ -96,7 +96,7 @@ list li:hover{
 
 .product{
     display: inline-block;
-    background-color: rgba(230, 150, 130, 0.5);
+    background-color: rgba(0, 191, 255, 0.3);
     vertical-align: top;
     border-radius: 5px;
     height: 350px;
@@ -114,19 +114,114 @@ list li:hover{
 }
 .buyBtn{
     display: block;
-
     vertical-align: bottom;
 }
 .hide{
-    display: block;
+    display: none;
     position: absolute;
-    background-color: rgba(255, 120, 110, 0.5);
+    background-color: rgba(0, 191, 255, 0.9);
     border-radius: 5px;
     max-width: max-content;
     min-width: max-content;
     width: max-content;
     padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .hide input{
     width: 30px;
+}
+.hide td{
+    padding: 5px;
+}
+.hide tr{
+    background-color: rgba(0, 191, 255, 0.5);
+}
+.hide tr:first-child{
+    background-color: rgba(0, 191, 255, 0.0);
+}
+.hide table{
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.buttons{
+    text-align: center;
+    padding: 10px 20px;
+}
+.buttons a{
+    margin-right: 10px;
+}
+.hide a{
+    text-decoration: none;
+    height: 30px;
+    border: rgba(255, 255, 255, 0.2) 2px solid;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.hide a:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    transition: 0.3s;
+}
+.hide a:last-child{
+    cursor: pointer;
+}
+.hide td button{
+      border: rgba(255, 255, 255, 0.2) 2px solid;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+      color: white;
+  }
+.hide td button:hover{
+    border: rgba(255, 255, 255, 0.2) 2px solid;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+    color: black;
+}
+.accountInfo button{
+    width: 70px;
+    border: none;
+    padding: 10px;
+    background-color: rgba(0, 191, 255, 0.5);
+    border-radius: 3px;
+    color: black;
+    margin-top: 5px;
+}
+.accountInfo button:hover{
+    border: none;
+    padding: 10px;
+    background-color: rgba(0, 191, 255, 0.5);
+    border-radius: 3px;
+    color: white;
+}
+.accountInfo{
+    font-style: italic;
+}
+.product button{
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+    border-radius: 5%;
+    width: 60px;
+}
+.product button:hover{
+    color: white;
+}
+.categories button{
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(0, 191, 255, 0.3);
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+    border-radius: 15%;
+}
+.categories button:hover{
+    color: white;
 }

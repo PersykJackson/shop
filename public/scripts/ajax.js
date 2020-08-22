@@ -94,3 +94,11 @@ function logout(){
         success: window.location.reload()
     })
 }
+function show(){
+    if($('.hide').css('display') === 'none'){
+        $('.hide').css('display', 'block')
+    }else{
+        $('.hide').css('display', 'none')
+    }
+
+}

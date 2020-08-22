@@ -36,7 +36,7 @@
                         }
 
                         echo "</table>";
-                        echo "<a href='main/basket'>Оформить заказ</a><button onclick='basketClean()'>Очистить корзину</button>";
+                        echo "<div class='buttons'><a href='main/basket'>Оформить заказ</a><a onclick='basketClean()'>Очистить корзину</a></div>";
                     }else{
                         echo "<p>Здесь пока ничего нет!</p>";
                     }
