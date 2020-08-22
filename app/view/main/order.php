@@ -4,7 +4,6 @@
         <caption>Ваш заказ</caption>
         <tr>
         <?php
-        var_dump($_POST);
         $total = 0;
         echo "<td>Наименование</td><td>Цена</td><td>Количество</td></tr>";
         foreach ($vars[0]['basket'] as $key => $value) {

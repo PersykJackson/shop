@@ -15,6 +15,9 @@ class Crm{
         return $this->db->select('select * from sales');
     }
     public function inOrder($id){
-        return $this->db->select("select * from sales where id = $id");
+        $array['order'] = $this->db->select("select * from sales where id = $id");
+        $array['name'] = $this->db->select("select name from products where id in ({$array['order'][0]['products']})");
+        $array['status'] = $this->db->select("select name from status");
+        return $array;
     }
 }

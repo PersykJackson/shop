@@ -12,7 +12,8 @@
     <a class='register' href='account/register'>Регистрация</a></div>";
 
     }else{
-        echo "<div class='accountInfo'>Name: $_SESSION[name]</div>";
+
+        echo "<div class='accountInfo'>login: {$_SESSION['auth']['login']}<br><button onclick='logout()'>Выход</button></div>";
     };?>
 
     </div>

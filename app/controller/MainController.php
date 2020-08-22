@@ -26,6 +26,8 @@ class MainController extends Controller
             $this->categoryAction();
         }elseif ($_POST['action'] == 'setCount'){
             $this->model->setCount($_POST);
+        }elseif ($_POST['action'] == 'logout'){
+            $this->model->logout();
         }
     }
     public function categoryAction(){

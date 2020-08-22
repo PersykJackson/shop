@@ -85,4 +85,7 @@ class Main
         $max = $maxTime->format('Y-m-d');
         return array($min, $max);
     }
+    public function logout(){
+        unset($_SESSION['auth']);
+    }
 }

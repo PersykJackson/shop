@@ -85,6 +85,12 @@ function buy(){
         dataType: 'html'
     })
 }
-function showAll(){
-
+function logout(){
+    $.ajax({
+        url: '/main/ajax',
+        type: 'POST',
+        data: ({action: 'logout'}),
+        dataType: 'html',
+        success: window.location.reload()
+    })
 }
